@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Gulp support for JSTransformer.",
   "keywords": [
-    "jstransformer"
+    "jstransformer",
+    "gulpplugin"
   ],
   "files": [
     "index.js"

@@ -1,7 +1,7 @@
 {
-  "name": "jstransformer-foo",
-  "version": "0.0.0",
-  "description": "Foo support for JSTransformers.",
+  "name": "gulp-jstransformer",
+  "version": "0.0.1",
+  "description": "Gulp support for JSTransformer.",
   "keywords": [
     "jstransformer"
   ],
@@ -9,10 +9,15 @@
     "index.js"
   ],
   "devDependencies": {
-    "test-jstransformer": "^1.0.0"
+    "gulp": "^3.8.11",
+    "gulp-rename": "^1.2.2",
+    "jstransformer-octet": "0.0.1",
+    "test-jstransformer": "^1.0.0",
+    "testit": "^2.0.2"
   },
   "scripts": {
-    "test": "test-jstransformer",
+    "gulp": "gulp",
+    "test": "node test",
     "coverage": "test-jstransformer coverage"
   },
   "repository": {
@@ -20,5 +25,11 @@
     "url": "https://github.com/jstransformers/jstransformer-foo.git"
   },
   "author": "Your Name <email@example.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jstransformer": "0.0.2",
+    "jstransformer-jstransformer": "^0.1.0",
+    "through2": "^0.6.5",
+    "gulp-util": "^3.0.5"
+  }
 }

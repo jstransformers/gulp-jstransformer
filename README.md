@@ -15,7 +15,7 @@ Run [JSTransformers](http://github.com/jstransformers) through [Gulp](http://gul
 
 ```js
 var gulp = require('gulp');
-var jstransformer = require(__dirname);
+var jstransformer = require('gulp-jstransformer');
 var rename = require('gulp-rename');
 
 gulp.task('default', function() {

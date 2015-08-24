@@ -28,9 +28,9 @@
   "author": "Your Name <email@example.com>",
   "license": "MIT",
   "dependencies": {
+    "gulp-util": "^3.0.5",
     "jstransformer": "0.0.2",
     "jstransformer-jstransformer": "^0.1.0",
-    "through2": "^0.6.5",
-    "gulp-util": "^3.0.5"
+    "through2": "^2.0.0"
   }
 }

@@ -8,7 +8,7 @@ var rename = require('gulp-rename');
 
 gulp.task('default', function() {
   var options = {
-    jstransformer: "octet"
+    engine: "octet"
   };
   var locals = {
     name: "World"

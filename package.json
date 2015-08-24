@@ -10,9 +10,9 @@
     "index.js"
   ],
   "devDependencies": {
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
-    "jstransformer-octet": "0.0.1",
+    "jstransformer-octet": "*",
     "test-jstransformer": "^1.0.0",
     "testit": "^2.0.2"
   },

@@ -2,31 +2,28 @@
 
 var through = require('through2');
 var jstransformer = require('jstransformer')(require('jstransformer-jstransformer'));
-var gutil = require('gulp-util');
-var PluginError = gutil.PluginError;
+var PluginError = require('gulp-util').PluginError;
 
-module.exports = function (options, locals) {
-  // Prepare the options.
-  options = options || {};
-  locals = locals || {};
+module.exports = function gulpJstransformer (options, locals) {
+  options = options && typeof options === 'object' ? options : {};
+  locals = locals && typeof locals === 'object' ? locals : {};
 
-  return through.obj(function(file, enc, cb) {
-    if (file.isNull()) {
-      this.push(file);
-      return cb();
-    }
+  if (!options.engine) {
+    throw new Error('gulp-jstransformer expect `options.engine` to be defined');
+  }
 
-    if (file.isStream()) {
-      this.emit('error', new PluginError('gulp-jstransformer', 'Steam not supported'));
-      return cb();
-    }
-
+  return through.obj(function (file, enc, next) {
     if (file.isBuffer()) {
-      var result = jstransformer.render(file.contents.toString(), options, locals);
-      file.contents = new Buffer(result.body);
-
-      this.push(file);
-      return cb();
+      try {
+        var contents = file.contents.toString(options.encoding);
+        var result = jstransformer.render(contents, options, locals);
+        file.contents = new Buffer(result.body);
+      } catch (err) {
+        this.emit('error', new PluginError('gulp-jstransformer', err));
+        return next(err);
+      }
+      return next(null, file);
     }
+    next();
   });
 };

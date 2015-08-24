@@ -1,26 +1,41 @@
 'use strict';
 
-var gulpJsTransformer = require('..');
-var assert = require('assert');
-var gutil = require('gulp-util');
-var test = require('testit');
-var fs = require('fs');
+var test = require('assertit');
+var through2 = require('through2');
+var plugin = require('../index');
+var gulp = require('gulp');
 
-var input = fs.readFileSync(__dirname + '/input.octet', 'utf8').trim();
-var expected = fs.readFileSync(__dirname + '/expected.html', 'utf8').trim();
-var options = require('./options');
-var locals = require('./locals');
+// DRY principle
+function jstransformer (options, locals, callback) {
+  var files = [];
+  var content = '';
 
-test('gulp-jstransformer', function(done) {
-  var stream = gulpJsTransformer(options, locals);
-  stream.on('data', function(data) {
-    assert.strictEqual(data.contents.toString().trim(), expected);
+  gulp.src('./test/*.octet')
+    .pipe(plugin(options, locals))
+    .pipe(through2.obj(function (file, enc, next) {
+      content = file.contents.toString();
+      files.push(file);
+      next();
+    }, function () {
+      callback(null, content);
+    }));
+}
+
+test('gulp-jstransformer:', function () {
+  test('should throw Error if no `options.engine` given', function (done) {
+    function fixture () {
+      plugin();
+    }
+
+    test.throws(fixture, Error);
+    test.throws(fixture, /expect `options\.engine` to be defined/);
     done();
   });
-
-  stream.write(new gutil.File({
-    contents: new Buffer('<h1>Hello, <%this.name%>!</h1>')
-  }));
-
-  stream.end();
+  test('should work when given engine and options and locals', function (done) {
+    jstransformer({engine: 'octet'}, {hello: 'Hello'}, function callback (err, content) {
+      test.ifError(err);
+      test.equal(content, '<p>Hello world</p>');
+      done();
+    });
+  });
 });

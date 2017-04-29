@@ -1,5 +1,7 @@
 # gulp-jstransformer [![The MIT License][license-img]][license-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/gulp-jstransformer.svg)](https://greenkeeper.io/)
+
 [Gulp](http://gulpjs.com) support for [JSTransformers][jstransformers-url]
 
 [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url] [![npmjs.com][npmjs-img]][npmjs-url]

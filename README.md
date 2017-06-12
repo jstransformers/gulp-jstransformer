@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # gulp-jstransformer
 
 [Gulp](http://gulpjs.com) support for [JSTransformers][jstransformers-url]

@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 # gulp-jstransformer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/gulp-jstransformer.svg)](https://greenkeeper.io/)
+
 [Gulp](http://gulpjs.com) support for [JSTransformers][jstransformers-url]
 
 [![Build Status](https://img.shields.io/travis/jstransformers/gulp-jstransformer/master.svg)](https://travis-ci.org/jstransformers/gulp-jstransformer)

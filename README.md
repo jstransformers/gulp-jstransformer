@@ -1,6 +1,6 @@
 # gulp-jstransformer
 
-[Gulp](http://gulpjs.com) support for [JSTransformers][jstransformers-url]
+[Gulp](http://gulpjs.com) support for [JSTransformers](http://github.com/jstransformers).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/gulp-jstransformer/master.svg)](https://travis-ci.org/jstransformers/gulp-jstransformer)
 [![Coverage Status](https://img.shields.io/codecov/c/github/jstransformers/gulp-jstransformer/master.svg)](https://codecov.io/gh/jstransformers/gulp-jstransformer)

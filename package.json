@@ -1,4 +1,10 @@
 {
+  "dependencies": {
+    "gulp-util": "^3.0.6",
+    "jstransformer": "1.0.0",
+    "jstransformer-jstransformer": "^1.1.2",
+    "through2": "^2.0.0"
+  },
   "name": "gulp-jstransformer",
   "version": "0.2.0",
   "description": "Gulp support for JSTransformers",
@@ -14,19 +20,24 @@
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "istanbul": "^0.4.2",
-    "jstransformer-octet": "^2.0.0"
+    "jstransformer-octet": "^2.0.0",
+    "xo": "*"
   },
   "scripts": {
     "coverage": "istanbul cover test/index.js",
-    "test": "node test/index.js"
+    "test": "node test/index.js",
+    "posttest": "xo --space --no-semicolon index.js"
   },
-  "repository": "jstransformers/gulp-jstransformer",
-  "author": "JSTransformers Team (https://github.com/orgs/jstransformers/people)",
-  "license": "MIT",
-  "dependencies": {
-    "gulp-util": "^3.0.6",
-    "jstransformer": "1.0.0",
-    "jstransformer-jstransformer": "^1.1.2",
-    "through2": "^2.0.0"
-  }
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jstransformers/jstransformer-foo.git"
+  },
+  "author": {
+    "name": "JSTransformers Team",
+    "url": "http://github.com/orgs/jstransformers/people"
+  },
+  "license": "MIT"
 }

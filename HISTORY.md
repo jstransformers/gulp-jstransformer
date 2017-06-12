@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0: 2017-06-12
+
+- Update Boilerplate
+
 ## v0.2.0: 2015-08-24
 
 - refactor, update boilerplate, tests, coverage, working example

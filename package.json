@@ -6,7 +6,7 @@
     "through2": "^2.0.0"
   },
   "name": "gulp-jstransformer",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Gulp support for JSTransformers",
   "keywords": [
     "jstransformer",
@@ -26,7 +26,7 @@
   "scripts": {
     "coverage": "istanbul cover test/index.js",
     "test": "node test/index.js",
-    "posttest": "xo --space --no-semicolon index.js"
+    "posttest": "xo --space=2 --no-semicolon index.js"
   },
   "engines": {
     "node": ">=4"

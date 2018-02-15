@@ -24,8 +24,8 @@
     "xo": "*"
   },
   "scripts": {
-    "coverage": "istanbul cover test/index.js",
-    "test": "node test/index.js",
+    "coverage": "test-jstransformer coverage",
+    "test": "node test",
     "posttest": "xo --space=2 --no-semicolon index.js"
   },
   "engines": {

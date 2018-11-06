@@ -3,7 +3,7 @@
     "gulp-util": "^3.0.6",
     "jstransformer": "1.0.0",
     "jstransformer-jstransformer": "^1.1.2",
-    "through2": "^2.0.0"
+    "through2": "^3.0.0"
   },
   "name": "gulp-jstransformer",
   "version": "0.3.1",

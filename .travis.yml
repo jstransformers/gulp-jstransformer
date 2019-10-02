@@ -2,20 +2,14 @@ language: node_js
 sudo: false
 
 node_js:
-  - "4"
-  - "6"
-  - "7"
   - "8"
   - "9"
-
-after_success:
-  - npm run coverage
-  - npm i codecov
-  - codecov -f coverage/coverage.json
+  - "10"
+  - "11"
+  - "12"
 
 notifications:
-  email:
-    on_success: never
+  email: false
 
 cache:
   directories:

@@ -2,7 +2,7 @@
 
 const through = require('through2')
 const jstransformer = require('jstransformer')(require('jstransformer-jstransformer'))
-const PluginError = require('gulp-util').PluginError
+const {PluginError} = require('gulp-util')
 
 module.exports = function (options, locals) {
   options = options && typeof options === 'object' ? options : {}
@@ -18,12 +18,14 @@ module.exports = function (options, locals) {
         const contents = file.contents.toString(options.encoding)
         const result = jstransformer.render(contents, options, locals)
         file.contents = Buffer.from(result.body)
-      } catch (err) {
-        this.emit('error', new PluginError('gulp-jstransformer', err))
-        return next(err)
+      } catch (error) {
+        this.emit('error', new PluginError('gulp-jstransformer', error))
+        return next(error)
       }
+
       return next(null, file)
     }
+
     next()
   })
 }
